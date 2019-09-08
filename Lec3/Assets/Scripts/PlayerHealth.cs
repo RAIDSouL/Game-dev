@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	void Update () {
 	
-		Debug.Log("Health: " + health);
+		Debug.Log("P_Health: " + health);
 	
 	}
 
@@ -48,11 +48,11 @@ public class PlayerHealth : MonoBehaviour {
 		health += boost;
 	
 		if(health >= maxHealth){
-			SceneManager.LoadScene ("Scene2");
+			SceneManager.LoadScene ("Scene1");
 		}else if(health >= 8){
 			GetComponent<MeshRenderer>().material.color = Color.white;
 		}else{
-			GetComponent<MeshRenderer>().material.color = Color.green;
+			GetComponent<MeshRenderer>().material.color = Color.blue;
 		}
 		
 	}

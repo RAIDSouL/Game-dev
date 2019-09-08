@@ -21,5 +21,16 @@ public class Bullet : MonoBehaviour {
 		}
 	}	
 
+	void OnCollisionEnter(Collision obj)
+    {
+        if (obj.gameObject.CompareTag("enemy"))
+        {
+            if(obj.gameObject.GetComponent<EnemyHealth>())
+			{
+            	// Destroy(obj.gameObject);
+				obj.gameObject.GetComponent<EnemyHealth>().GetDamage(1);
+			}
+        }
+    }
 
 }

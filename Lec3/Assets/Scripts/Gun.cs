@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour {
 		Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hitPoint;
 
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButton(0)) {
 			
 			if (Physics.Raycast (cameraRay, out hitPoint, Mathf.Infinity)) { 
 				
