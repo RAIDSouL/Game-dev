@@ -11,8 +11,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Start () {
 		
-		initialHealth = 4;
-		maxHealth = 10;
+		initialHealth = 5;
+		maxHealth = 20;
 
 		health = initialHealth;
 		isDead = false;
@@ -48,8 +48,8 @@ public class PlayerHealth : MonoBehaviour {
 		health += boost;
 	
 		if(health >= maxHealth){
-			SceneManager.LoadScene ("Scene1");
-		}else if(health >= 8){
+			SceneManager.LoadScene ("Scene2");
+		}else if(health >= 15){
 			GetComponent<MeshRenderer>().material.color = Color.white;
 		}else{
 			GetComponent<MeshRenderer>().material.color = Color.blue;

@@ -7,14 +7,7 @@ public class Power : MonoBehaviour {
 	public int boostValue;
 	public AudioClip pickUpClip;
 
-	AudioSource audioSource;
-
-	void Start () {
-		
-		audioSource = gameObject.AddComponent<AudioSource> ();
-
-	}
-
+	public AudioSource audioSource;
 	void Update () {
 		
 		transform.Rotate (speed*Time.deltaTime,0.0f,0.0f);
@@ -30,8 +23,6 @@ public class Power : MonoBehaviour {
 			audioSource.clip = pickUpClip;
 			audioSource.Play ();
 			Destroy (gameObject,pickUpClip.length);
-
-
 		}
 
 	}

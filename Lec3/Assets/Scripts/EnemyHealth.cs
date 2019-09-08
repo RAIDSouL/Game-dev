@@ -6,8 +6,8 @@ public class EnemyHealth : MonoBehaviour {
 	// Use this for initialization
 	int health;
 	int maxhealth;
-
 	bool isdead;
+	public int BoomDamage;
 
 	void Start () {
 
@@ -42,5 +42,15 @@ public class EnemyHealth : MonoBehaviour {
 	void Die()
 	{
 		Destroy(gameObject);
+	}
+
+	
+    // Start is called before the first frame update
+    void OnTriggerEnter(Collider obj){
+		if(obj.gameObject.CompareTag("Player")){
+			obj.GetComponent<PlayerHealth>().GetDamage(BoomDamage);
+			Boom.PointBoom.PlaySound();
+			Die();
+		}
 	}
 }
